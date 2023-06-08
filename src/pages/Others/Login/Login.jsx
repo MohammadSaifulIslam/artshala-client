@@ -19,6 +19,7 @@ const Login = () => {
                </label>
                <label className="">
                    <input type="email" {...register("email" , { required: true })} placeholder='example@gmail.com' className='my-input' required />
+                   {errors.email && <span className="text-sm text-error">This field is required</span>}
                </label>
            </div>
            <div className="form-control mt-4">
@@ -33,7 +34,7 @@ const Login = () => {
                                : <EyeSlashIcon title='Hide password'  onClick={()=> setShowPass(false)} className='h-6 w-6 absolute top-2 right-3 z-20 cursor-pointer'></EyeSlashIcon>
                        }
                    </span>
-                   {errors.password && <span>This field is required</span>}
+                   {errors.password && <span className="text-sm text-error">This field is required</span>}
                </label>
            </div>
            <Link to='/reset-password' className=" btn-link text-error cursor-pointer normal-case" >Forgot password?</Link>
