@@ -7,7 +7,7 @@ const Instructors = () => {
     useEffect(() => {
         fetch('/instructor.json')
             .then(res => res.json())
-            .then(data => setInstructorsData(data))
+            .then(data => setInstructorsData(data.slice(0,6)))
     }, [])
     return (
         <section className="my-container mt-20">
