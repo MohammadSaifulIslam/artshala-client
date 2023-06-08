@@ -29,7 +29,8 @@ const Class = () => {
                     modules={[Navigation]}
                     className="mySwiper"
                 >
-                    {
+            
+                 {
                         classData.map(data =>
                             <SwiperSlide key={data.id}>
                                 <ClassCard data={data}></ClassCard>
@@ -37,7 +38,6 @@ const Class = () => {
 
                         )
                     }
-
                 </Swiper>
             </div>
         </section>
