@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: "Work Sans", sans-serif;
+}
 .my-container {
   @apply p-5 max-w-7xl mx-auto;
 }

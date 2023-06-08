@@ -1,0 +1,9 @@
+.swiper-button-next,
+.swiper-button-prev {
+  @apply bg-primary text-white w-12 h-12 rounded-full !text-sm;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  @apply text-xl font-bold;
+}

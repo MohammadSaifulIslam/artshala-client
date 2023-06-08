@@ -4,7 +4,7 @@ import NavBar from "../pages/Shared/NavBar/NavBar";
 
 const Main = () => {
   return (
-    <div>
+    <div className="relative">
       <NavBar />
       <ScrollRestoration/>
       <Outlet />
