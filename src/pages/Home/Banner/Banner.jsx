@@ -5,7 +5,7 @@ const Banner = () => {
         <div className=''>
             <Carousel swipeable>
                 <div className='h-screen relative'>
-                    <img src="https://img.freepik.com/free-photo/woman-holding-picture_23-2148550781.jpg?w=740&t=st=1686204085~exp=1686204685~hmac=1eea2787c793631bb8785ba79a1a8102799e795f0ce74d32a53e7ab20fb844c5" className='w-full h-full object-cover' />
+                    <img src="https://img.freepik.com/free-photo/floral-patterns-depict-modern-wedding-celebration-generated-by-ai_188544-9728.jpg?w=826&t=st=1686244059~exp=1686244659~hmac=40dae6e8902fbf060cb409bfd5fdcb57b7faa33a142e87cc79bfc67cc0379ce0" className='w-full h-full object-cover' />
                     <div className='bg-black bg-opacity-40 h-full w-full absolute z-30 top-0 left-0 flex items-center'>
                         <div className='text-white space-y-3 text- my-container text-left'>
                             <h2 className='text-5xl font-bold uppercase'>Welcome to Artshala</h2>

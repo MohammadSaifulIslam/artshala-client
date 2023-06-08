@@ -17,7 +17,7 @@ const NavBar = () => {
                             <li><NavLink to='/instructors' className={({ isActive }) =>
                                 isActive ? "text-primary" : ''}>
                                 Instructors</NavLink></li>
-                            <li><NavLink to='/abs' className={({ isActive }) =>
+                            <li><NavLink to='/classes' className={({ isActive }) =>
                                 isActive ? "text-primary" : ''}>
                                  Classes</NavLink></li>
                             <li><NavLink to='/blog' className={({ isActive }) =>
@@ -41,7 +41,7 @@ const NavBar = () => {
                         <li><NavLink to='/instructors' className={({ isActive }) =>
                             isActive ? "text-primary" : ''}>
                             Instructors</NavLink></li>
-                        <li><NavLink to='/favorite-dish' className={({ isActive }) =>
+                        <li><NavLink to='/classes' className={({ isActive }) =>
                             isActive ? "text-primary" : ''}>
                             Classes</NavLink></li>
                         <li><NavLink to='/blog' className={({ isActive }) =>

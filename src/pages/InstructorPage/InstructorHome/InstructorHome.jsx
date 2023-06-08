@@ -11,7 +11,7 @@ const InstructorHome = () => {
     }, [])
     return (
         <div>
-            <SectionBanner title={'Our Instrcutors'} />
+            <SectionBanner title={'Our Instrcutors'} description={'Our instructors page features a team of highly skilled and experienced artists who are passionate about teaching.'} />
             <div className="my-container">
                 <div className="grid md:grid-cols-4 gap-5 mt-10">
                     {
