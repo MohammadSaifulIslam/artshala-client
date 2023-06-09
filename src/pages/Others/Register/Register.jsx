@@ -2,8 +2,10 @@ import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 
 const Register = () => {
+    const { user,createUser, loginUser, updateUser, loginWithGoogle,}= useAuth()
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const [error, setError] = useState(null);
@@ -14,17 +16,24 @@ const Register = () => {
         const { name, email, photo, password, address, phone, gender } = data;
 
 
-        const imageURL = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMAGE_API_KEY}`;
+        const imgbbURL = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMAGE_API_KEY}`;
         const imageFormData = new FormData()
         imageFormData.append('image',photo[0])
-        fetch(imageURL,{
+        fetch(imgbbURL,{
             method: "POST",
             body: imageFormData
         })
         .then(res => res.json())
         .then(data =>{
-            
-            console.log(data)
+            if(data.success){
+              const imgUrl = data.data.display_url;
+                console.log(imgUrl, name, email, password, address, phone, gender)
+                createUser(email,password)
+                .then(result => {
+                    console.log(result.user)
+                })
+                .catch(err => console.log(err))
+            }
             }
             
             )
