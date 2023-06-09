@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 
 const Register = () => {
-    const { user,createUser, loginUser, updateUser, loginWithGoogle,}= useAuth()
+    const {createUser, updateUser, loginWithGoogle,}= useAuth()
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const [error, setError] = useState(null);
@@ -27,10 +27,28 @@ const Register = () => {
         .then(data =>{
             if(data.success){
               const imgUrl = data.data.display_url;
-                console.log(imgUrl, name, email, password, address, phone, gender)
+                const userInformation = {photo: imgUrl, name, email, address, phone, gender}
+                // firebase user create 
                 createUser(email,password)
-                .then(result => {
-                    console.log(result.user)
+                .then(() => {
+                    // firebase update user
+                    updateUser(name, imgUrl)
+                    .then(()=> {
+                        
+                        // save user information on database
+                        fetch(`${import.meta.env.VITE_LOCALHOST}/users/${email}`, {
+                            method: "PUT",
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(userInformation)
+                        })
+                        .then(res=> res.json())
+                        .then(data => console.log(data))
+                    })
+                    .catch(err=> {
+                        console.log(err)
+                    })
                 })
                 .catch(err => console.log(err))
             }
