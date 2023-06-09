@@ -2,10 +2,12 @@ import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import saveUser from "../../../apis/auth/auth";
 import useAuth from "../../../hooks/useAuth";
+import SocialLogin from "../../Shared/SocialLogin/SocialLogin";
 
 const Register = () => {
-    const {createUser, updateUser, loginWithGoogle,}= useAuth()
+    const { createUser, updateUser, } = useAuth()
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const [error, setError] = useState(null);
@@ -18,42 +20,37 @@ const Register = () => {
 
         const imgbbURL = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMAGE_API_KEY}`;
         const imageFormData = new FormData()
-        imageFormData.append('image',photo[0])
-        fetch(imgbbURL,{
+        imageFormData.append('image', photo[0])
+        fetch(imgbbURL, {
             method: "POST",
             body: imageFormData
         })
-        .then(res => res.json())
-        .then(data =>{
-            if(data.success){
-              const imgUrl = data.data.display_url;
-                const userInformation = {photo: imgUrl, name, email, address, phone, gender}
-                // firebase user create 
-                createUser(email,password)
-                .then(() => {
-                    // firebase update user
-                    updateUser(name, imgUrl)
-                    .then(()=> {
-                        
-                        // save user information on database
-                        fetch(`${import.meta.env.VITE_LOCALHOST}/users/${email}`, {
-                            method: "PUT",
-                            headers: {
-                                'content-type': 'application/json'
-                            },
-                            body: JSON.stringify(userInformation)
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    const imgUrl = data.data.display_url;
+                    const userInformation = { photo: imgUrl, name, email, address, phone, gender }
+                    // firebase user create 
+                    createUser(email, password)
+                        .then(() => {
+                            // firebase update user
+                            updateUser(name, imgUrl)
+                                .then(() => {
+                                    // save user information on database
+                                    saveUser(email, userInformation)
+                                })
+                                .catch(err => {
+                                    setError(err.message)
+                                    console.log(err)
+                                })
                         })
-                        .then(res=> res.json())
-                        .then(data => console.log(data))
-                    })
-                    .catch(err=> {
-                        console.log(err)
-                    })
-                })
-                .catch(err => console.log(err))
+                        .catch(err => {
+                            setError(err.message)
+                            console.log(err)
+                        })
+                }
             }
-            }
-            
+
             )
     };
 
@@ -147,6 +144,7 @@ const Register = () => {
                 <button className='my-btn w-full mt-5'>Create an account</button>
                 <p className='text-error text-center mt-2'>{error}</p>
                 <p className='text-center mt-2'>Already have an account? <Link to='/login' className='text-primary underline'>Login</Link></p>
+                <SocialLogin />
             </form>
         </section>
     );
