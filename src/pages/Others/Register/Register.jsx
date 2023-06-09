@@ -5,10 +5,31 @@ import { Link } from "react-router-dom";
 
 const Register = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
 
     const [error, setError] = useState(null);
     const [showPass, setShowPass] = useState(false);
+
+    const onSubmit = data => {
+        setError(null);
+        const { name, email, photo, password, address, phone, gender } = data;
+
+
+        const imageURL = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMAGE_API_KEY}`;
+        const imageFormData = new FormData()
+        imageFormData.append('image',photo[0])
+        fetch(imageURL,{
+            method: "POST",
+            body: imageFormData
+        })
+        .then(res => res.json())
+        .then(data =>{
+            
+            console.log(data)
+            }
+            
+            )
+    };
+
 
     return (
         <section className='my-container my-10 '>
@@ -47,8 +68,8 @@ const Register = () => {
                         <span className="label-text">Your Photo</span>
                     </label>
                     <label className="my-input">
-                        <input type="file"  {...register("photo", { required: true })}  className='' required />
-                        
+                        <input type="file"  {...register("photo", { required: true })} className='' required />
+
                     </label>
                 </div>
                 <div className="form-control mb-3">

@@ -4,7 +4,7 @@ import ClassHome from "../pages/ClassesPage/ClassHome/ClassHome";
 import Home from "../pages/Home/Home/Home";
 import InstructorHome from "../pages/InstructorPage/InstructorHome/InstructorHome";
 import Login from "../pages/Others/Login/Login";
-import Register from "../pages/Others/Login/Register/Register";
+import Register from "../pages/Others/Register/Register";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/register',
-    element: <Register />
+    element: <Register/>
   }
 ]);
 
