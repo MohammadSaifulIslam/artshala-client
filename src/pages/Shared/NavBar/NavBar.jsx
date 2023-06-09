@@ -1,7 +1,8 @@
 import { Link, NavLink } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
 const NavBar = () => {
-
+    const { user } = useAuth();
     return (
         <div className='bg-black w-full fixed left-1/2 -translate-x-1/2 top-0 z-50'>
             <nav className="my-container navbar text-white py-5">
@@ -19,15 +20,15 @@ const NavBar = () => {
                                 Instructors</NavLink></li>
                             <li><NavLink to='/classes' className={({ isActive }) =>
                                 isActive ? "text-primary" : ''}>
-                                 Classes</NavLink></li>
-                            <li><NavLink to='/blog' className={({ isActive }) =>
+                                Classes</NavLink></li>
+                            <li><NavLink to='/dashboard' className={({ isActive }) =>
                                 isActive ? "text-primary" : ''}>
                                 Dashboard</NavLink></li>
                             <li><NavLink to='/contact' className={({ isActive }) =>
                                 isActive ? "text-primary" : ''}>
                                 CONTACT</NavLink></li>
-                        
-                           
+
+
 
                         </ul>
                     </div>
@@ -44,13 +45,18 @@ const NavBar = () => {
                         <li><NavLink to='/classes' className={({ isActive }) =>
                             isActive ? "text-primary" : ''}>
                             Classes</NavLink></li>
-                        <li><NavLink to='/blog' className={({ isActive }) =>
+                        <li><NavLink to='/dashboard' className={({ isActive }) =>
                             isActive ? "text-primary" : ''}>
                             Dashboard </NavLink></li>
                         <li><NavLink to='/contact' className={({ isActive }) =>
                             isActive ? "text-primary" : ''}>
                             CONTACT</NavLink></li>
-                  
+                        {
+                            !user && <li><NavLink to='/login' className={({ isActive }) =>
+                                isActive ? "text-primary" : ''}>
+                                Login</NavLink></li>
+                        }
+
                     </ul>
                 </div>
                 <div className="navbar-end">

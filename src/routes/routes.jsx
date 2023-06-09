@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import DashboardLayout from "../layouts/DashboardLayout";
 import Main from "../layouts/Main";
 import ClassHome from "../pages/ClassesPage/ClassHome/ClassHome";
 import Home from "../pages/Home/Home/Home";
@@ -17,13 +18,17 @@ const router = createBrowserRouter([
       },
       {
         path: '/instructors',
-        element: <InstructorHome/>
+        element: <InstructorHome />
       },
       {
         path: '/classes',
-        element: <ClassHome/>
+        element: <ClassHome />
       },
     ]
+  },
+  {
+    path: '/dashboard',
+    element: <DashboardLayout />
   },
   {
     path: '/login',
@@ -31,7 +36,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/register',
-    element: <Register/>
+    element: <Register />
   }
 ]);
 
