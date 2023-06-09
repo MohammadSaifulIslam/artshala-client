@@ -1,17 +1,19 @@
 import { useState } from 'react'
 import { AiOutlineBars } from 'react-icons/ai'
-import { BsFillHouseAddFill } from 'react-icons/bs'
 import { FcSettings } from 'react-icons/fc'
 import { GrLogout } from 'react-icons/gr'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import useAuth from '../../../hooks/useAuth'
+import AdminMenu from './AdminMenu'
 
 
 const Sidebar = () => {
     const navigate = useNavigate()
     const { user, logOut } = useAuth()
-
     const [isActive, setActive] = useState('false')
+
+    // TODO: make admin dynamic
+    const isAdmin = true;
 
     // Sidebar Responsive Handler
     const handleToggle = () => {
@@ -76,19 +78,10 @@ const Sidebar = () => {
                     <div className='flex flex-col justify-between flex-1 mt-6'>
                         <nav>
                             <>
-
                                 {/* Menu Links */}
-                                <NavLink
-                                    to='/'
-                                    className={({ isActive }) =>
-                                        `flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform  hover:bg-white   hover:text-black ${isActive ? 'bg-gray-300  text-black' : 'text-black'
-                                        }`
-                                    }
-                                >
-                                    <BsFillHouseAddFill className='w-5 h-5' />
-
-                                    <span className='mx-4 font-medium'>Selected Classes</span>
-                                </NavLink>
+                                {
+                                    isAdmin && <AdminMenu></AdminMenu>
+                                }
                             </>
                         </nav>
                     </div>

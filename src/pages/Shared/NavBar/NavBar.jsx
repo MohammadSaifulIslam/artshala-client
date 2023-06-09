@@ -60,6 +60,7 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
+                    {/* TODO: user profile image */}
                     {/* {
                         user && <button onClick={handleLogout} className='my-btn hidden lg:block'>Logout</button>
                     }
