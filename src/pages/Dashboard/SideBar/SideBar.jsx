@@ -5,7 +5,10 @@ import { GrLogout } from 'react-icons/gr'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import useAdmin from '../../../hooks/useAdmin'
 import useAuth from '../../../hooks/useAuth'
+import useInstructor from '../../../hooks/useInstructor'
 import AdminMenu from './AdminMenu'
+import InstructorMenu from './InstructorMenu'
+import StudentMenu from './StudentMenu'
 
 
 const Sidebar = () => {
@@ -13,9 +16,9 @@ const Sidebar = () => {
     const { user, logOut } = useAuth()
     const [isActive, setActive] = useState('false')
 
-    // TODO: make admin dynamic
     const [isAdmin] = useAdmin()
-    console.log(isAdmin)
+    const [isInstructor] = useInstructor()
+    console.log({isAdmin},{ isInstructor})
     // Sidebar Responsive Handler
     const handleToggle = () => {
         setActive(!isActive)
@@ -82,6 +85,12 @@ const Sidebar = () => {
                                 {/* Menu Links */}
                                 {
                                     isAdmin && <AdminMenu></AdminMenu>
+                                }
+                                {
+                                    isInstructor && <InstructorMenu/>
+                                }
+                                {
+                                    !isAdmin && !isInstructor && <StudentMenu/>
                                 }
                             </>
                         </nav>

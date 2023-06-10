@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const AdminMenu = () => {
     return (
-        <div>
+        <>
             <NavLink
                 to='/'
                 className={({ isActive }) =>
@@ -24,7 +24,7 @@ const AdminMenu = () => {
                 <BsFillHouseAddFill className='w-5 h-5' />
                 <span className='mx-4 font-medium'>Manage Users</span>
             </NavLink>
-        </div>
+        </>
     );
 };
 
