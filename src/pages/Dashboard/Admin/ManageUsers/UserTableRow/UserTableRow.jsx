@@ -1,5 +1,5 @@
-import instructorIcon from '../../../../assets/icons/driving-instructor.png';
-import adminIcon from '../../../../assets/icons/setting.png';
+import instructorIcon from '../../../../../assets/icons/driving-instructor.png';
+import adminIcon from '../../../../../assets/icons/setting.png';
 
 const UserTableRow = ({ user, index, handleInstructor, handleAdmin }) => {
     const { _id, name, photo, email } = user

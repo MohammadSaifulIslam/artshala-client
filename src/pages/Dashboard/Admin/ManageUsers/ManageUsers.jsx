@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import Swal from "sweetalert2";
-import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
+import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
 import UserTableRow from "./UserTableRow/UserTableRow";
 
 const ManageUsers = () => {

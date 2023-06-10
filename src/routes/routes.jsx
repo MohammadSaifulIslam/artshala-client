@@ -3,7 +3,8 @@ import DashboardLayout from "../layouts/DashboardLayout";
 import Main from "../layouts/Main";
 import ClassHome from "../pages/ClassesPage/ClassHome/ClassHome";
 import AddClass from "../pages/Dashboard/AddClass/AddClass";
-import ManageUsers from "../pages/Dashboard/ManageUsers/ManageUsers";
+import ManageClasses from "../pages/Dashboard/Admin/ManageClasses/ManageClasses";
+import ManageUsers from "../pages/Dashboard/Admin/ManageUsers/ManageUsers";
 import MyClasses from "../pages/Dashboard/MyClasses/MyClasses";
 import Home from "../pages/Home/Home/Home";
 import InstructorHome from "../pages/InstructorPage/InstructorHome/InstructorHome";
@@ -38,14 +39,18 @@ const router = createBrowserRouter([
         path: '/dashboard/manage-users',
         element: <ManageUsers />
       },
+      {
+        path: '/dashboard/manage-classes',
+        element: <ManageClasses />
+      },
       // instructor pages
       {
         path: '/dashboard/add-class',
-        element: <AddClass/>
+        element: <AddClass />
       },
       {
         path: '/dashboard/my-classes',
-        element: <MyClasses/>
+        element: <MyClasses />
       },
     ]
   },
