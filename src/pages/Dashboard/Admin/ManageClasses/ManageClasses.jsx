@@ -19,7 +19,21 @@ const ManageClasses = () => {
             if(res.data.modifiedCount){
                 Swal.fire({
                     icon: 'success',
-                    title: `You successfully approved the class`,
+                    title: `You successfully approve the class`,
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                refetch()
+            }
+        })
+    }
+    const handleDeny = (id) => {
+        axios.patch(`${import.meta.env.VITE_LOCALHOST}/class-status/${id}?status=Denied`)
+        .then(res=> {
+            if(res.data.modifiedCount){
+                Swal.fire({
+                    icon: 'success',
+                    title: `You successfully deny the class`,
                     showConfirmButton: false,
                     timer: 1500
                 })
@@ -51,7 +65,7 @@ const ManageClasses = () => {
                     <tbody>
                         {/* row 1 */}
                         {
-                            allClassData.map((classData, index) => <ManageClassesTableRow key={classData._id} classData={classData} index={index} handleApproved={handleApproved}></ManageClassesTableRow>
+                            allClassData.map((classData, index) => <ManageClassesTableRow key={classData._id} classData={classData} index={index} handleApproved={handleApproved} handleDeny={handleDeny}></ManageClassesTableRow>
                             )
                         }
                     </tbody>

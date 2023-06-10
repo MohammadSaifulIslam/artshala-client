@@ -1,4 +1,5 @@
-const ManageClassesTableRow = ({ classData, index,handleApproved }) => {
+const ManageClassesTableRow = ({ classData, index,handleApproved, handleDeny }) => {
+
     const {photo, class_name, instructor_email, instructor_name, available_seats, price, status, _id} =classData
     return (
         <tr >
@@ -25,8 +26,8 @@ const ManageClassesTableRow = ({ classData, index,handleApproved }) => {
             <td>{status}</td>
             <th>
                 <div className='flex gap-3'>
-                    <button onClick={()=>handleApproved(_id)} className={`text-sm font-medium bg-slate-200 p-2 rounded-md ${status === 'Approved' ? 'btn-disabled' : ''}`}>Approve</button>
-                    <button className={`text-sm font-medium bg-slate-200 p-2 rounded-md ${status === 'Approved' ? 'btn-disabled' : ''}`}>Deny</button>
+                    <button onClick={()=>handleApproved(_id)} className={`text-sm font-medium bg-slate-200 p-2 rounded-md ${status === 'Approved' || status === "Denied"  ? 'btn-disabled' : ''}`}>Approve</button>
+                    <button onClick={()=> handleDeny(_id)} className={`text-sm font-medium bg-slate-200 p-2 rounded-md ${status === 'Approved' || status === "Denied" ? 'btn-disabled' : ''}`}>Deny</button>
                     <button className={`text-sm font-medium bg-slate-200 p-2 rounded-md`}>Feadback</button>
                 </div>
             </th>
