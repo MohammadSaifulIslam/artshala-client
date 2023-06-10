@@ -1,4 +1,5 @@
-const ManageClassesTableRow = ({ classData, index }) => {
+const ManageClassesTableRow = ({ classData, index,handleApproved }) => {
+    const {photo, class_name, instructor_email, instructor_name, available_seats, price, status, _id} =classData
     return (
         <tr >
             <th>
@@ -7,26 +8,26 @@ const ManageClassesTableRow = ({ classData, index }) => {
             <td>
                 <div className="avatar">
                     <div className="mask mask-squircle w-12 h-12">
-                        <img src={classData.photo} alt="Class photo" />
+                        <img src={photo} alt="Class photo" />
                     </div>
                 </div>
             </td>
             <td>
-                {classData.class_name}
+                {class_name}
             </td>
             <td>
-                {classData.instructor_name}
+                {instructor_name}
                 <br />
-                <span className="badge badge-ghost badge-sm">{classData.instructor_email}</span>
+                <span className="badge badge-ghost badge-sm">{instructor_email}</span>
             </td>
-            <td>{classData.available_seats}</td>
-            <td>{classData.price}</td>
-            <td>{classData.status}</td>
+            <td>{available_seats}</td>
+            <td>{price}</td>
+            <td>{status}</td>
             <th>
-                <div className='flex'>
-                    <button className="btn btn-ghost btn-xs">Approve</button>
-                    <button className="btn btn-ghost btn-xs">Deny</button>
-                    <button className="btn btn-ghost btn-xs">Feadback</button>
+                <div className='flex gap-3'>
+                    <button onClick={()=>handleApproved(_id)} className={`text-sm font-medium bg-slate-200 p-2 rounded-md ${status === 'Approved' ? 'btn-disabled' : ''}`}>Approve</button>
+                    <button className={`text-sm font-medium bg-slate-200 p-2 rounded-md ${status === 'Approved' ? 'btn-disabled' : ''}`}>Deny</button>
+                    <button className={`text-sm font-medium bg-slate-200 p-2 rounded-md`}>Feadback</button>
                 </div>
             </th>
         </tr>
