@@ -4,6 +4,7 @@ import Main from "../layouts/Main";
 import ClassHome from "../pages/ClassesPage/ClassHome/ClassHome";
 import AddClass from "../pages/Dashboard/AddClass/AddClass";
 import ManageUsers from "../pages/Dashboard/ManageUsers/ManageUsers";
+import MyClasses from "../pages/Dashboard/MyClasses/MyClasses";
 import Home from "../pages/Home/Home/Home";
 import InstructorHome from "../pages/InstructorPage/InstructorHome/InstructorHome";
 import Login from "../pages/Others/Login/Login";
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/add-class',
         element: <AddClass/>
+      },
+      {
+        path: '/dashboard/my-classes',
+        element: <MyClasses/>
       },
     ]
   },

@@ -23,7 +23,7 @@ const AddClass = () => {
             .then(data => {
                 if (data.success) {
                     const imgUrl = data.data.display_url;
-                    const classData =  {available_seats : parseInt(available_seats) ,class_name, instructor_name : user?.displayName ,photo : imgUrl , instructor_email : user?.email ,price : parseFloat(price),summary, enrolled_students: 0 }
+                    const classData =  {available_seats : parseInt(available_seats) ,class_name, instructor_name : user?.displayName ,photo : imgUrl , instructor_email : user?.email ,price : parseFloat(price),summary, enrolled_students: 0 , status: 'Pending'}
                     console.log(classData)
                   axios.post(`${import.meta.env.VITE_LOCALHOST}/class`, classData )
                   .then(res => {

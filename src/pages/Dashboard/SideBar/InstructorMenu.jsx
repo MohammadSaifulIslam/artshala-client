@@ -15,7 +15,7 @@ const InstructorMenu = () => {
             <span className='mx-4 font-medium'>Add Class</span>
         </NavLink>
         <NavLink
-            to='\'
+            to='/dashboard/my-classes'
             className={({ isActive }) =>
                 `flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform  hover:bg-white   hover:text-black ${isActive ? 'bg-white  text-black' : 'text-black'
                 }`
