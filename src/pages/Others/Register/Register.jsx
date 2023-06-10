@@ -1,17 +1,18 @@
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import saveUser from "../../../apis/auth/auth";
 import useAuth from "../../../hooks/useAuth";
 import SocialLogin from "../../Shared/SocialLogin/SocialLogin";
 
 const Register = () => {
     const { createUser, updateUser, } = useAuth()
-    const { register, handleSubmit, formState: { errors } } = useForm();
-
+    const { register, handleSubmit,reset , formState: { errors } } = useForm();
     const [error, setError] = useState(null);
     const [showPass, setShowPass] = useState(false);
+    const navigate = useNavigate();
 
     const onSubmit = data => {
         setError(null);
@@ -38,6 +39,14 @@ const Register = () => {
                                 .then(() => {
                                     // save user information on database
                                     saveUser(email, userInformation)
+                                    reset()
+                                    navigate('/')
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: 'Register Successful',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    })
                                 })
                                 .catch(err => {
                                     setError(err.message)
@@ -49,9 +58,8 @@ const Register = () => {
                             console.log(err)
                         })
                 }
-            }
-
-            )
+            })
+            .catch(err=> setError(err.message))
     };
 
 

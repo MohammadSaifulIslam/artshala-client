@@ -1,14 +1,29 @@
 import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import Swal from "sweetalert2";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 import UserTableRow from "./UserTableRow/UserTableRow";
 
 const ManageUsers = () => {
-    const { data: users = [], } = useQuery(['users'], async () => {
+    const { data: users = [], refetch } = useQuery(['users'], async () => {
         const res = await fetch(`${import.meta.env.VITE_LOCALHOST}/users`)
         return res.json()
-
-
     })
+    const handleInstructor = (id, name) => {
+        console.log(id)
+        axios.patch(`${import.meta.env.VITE_LOCALHOST}/user-role/${id}?role=instructor`)
+            .then(res => {
+                Swal.fire({
+                    icon: 'success',
+                    title: `${name} is Instructor now`,
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                refetch()
+                console.log(res.data)
+            })
+            .catch(err => console.log(err))
+    }
     return (
         <div className="my-10">
             <SectionTitle title={'Manage Users'}></SectionTitle>
@@ -28,13 +43,11 @@ const ManageUsers = () => {
                     </thead>
                     <tbody>
                         {/* row 1 */}
-
                         {
                             users.map((user, index) =>
-                                <UserTableRow key={user.Id} user={user} index={index}></UserTableRow>
+                                <UserTableRow key={user._id} user={user} index={index} handleInstructor={handleInstructor}></UserTableRow>
                             )
                         }
-
                     </tbody>
 
 
