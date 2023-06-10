@@ -9,6 +9,8 @@ const ManageUsers = () => {
         const res = await fetch(`${import.meta.env.VITE_LOCALHOST}/users`)
         return res.json()
     })
+
+    // make user instructor
     const handleInstructor = (id, name) => {
         console.log(id)
         axios.patch(`${import.meta.env.VITE_LOCALHOST}/user-role/${id}?role=instructor`)
@@ -16,6 +18,22 @@ const ManageUsers = () => {
                 Swal.fire({
                     icon: 'success',
                     title: `${name} is Instructor now`,
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                refetch()
+                console.log(res.data)
+            })
+            .catch(err => console.log(err))
+    }
+    // make user instructor
+    const handleAdmin = (id, name) => {
+        console.log(id)
+        axios.patch(`${import.meta.env.VITE_LOCALHOST}/user-role/${id}?role=admin`)
+            .then(res => {
+                Swal.fire({
+                    icon: 'success',
+                    title: `${name} is Admin now`,
                     showConfirmButton: false,
                     timer: 1500
                 })
@@ -45,7 +63,7 @@ const ManageUsers = () => {
                         {/* row 1 */}
                         {
                             users.map((user, index) =>
-                                <UserTableRow key={user._id} user={user} index={index} handleInstructor={handleInstructor}></UserTableRow>
+                                <UserTableRow key={user._id} user={user} index={index} handleInstructor={handleInstructor} handleAdmin={handleAdmin}></UserTableRow>
                             )
                         }
                     </tbody>
