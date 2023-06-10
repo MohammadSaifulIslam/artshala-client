@@ -5,7 +5,7 @@ const InstructorMenu = () => {
     return (
         <>
         <NavLink
-            to='/'
+            to='/dashboard/add-class'
             className={({ isActive }) =>
                 `flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform  hover:bg-white   hover:text-black ${isActive ? 'bg-white  text-black' : 'text-black'
                 }`
