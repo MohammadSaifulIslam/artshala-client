@@ -3,6 +3,7 @@ import { AiOutlineBars } from 'react-icons/ai'
 import { FcSettings } from 'react-icons/fc'
 import { GrLogout } from 'react-icons/gr'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
+import useAdmin from '../../../hooks/useAdmin'
 import useAuth from '../../../hooks/useAuth'
 import AdminMenu from './AdminMenu'
 
@@ -13,8 +14,8 @@ const Sidebar = () => {
     const [isActive, setActive] = useState('false')
 
     // TODO: make admin dynamic
-    const isAdmin = true;
-
+    const [isAdmin] = useAdmin()
+    console.log(isAdmin)
     // Sidebar Responsive Handler
     const handleToggle = () => {
         setActive(!isActive)
