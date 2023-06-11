@@ -8,6 +8,7 @@ import AdminFeedback from "../pages/Dashboard/Admin/ManageClasses/AdminFeedback/
 import ManageClasses from "../pages/Dashboard/Admin/ManageClasses/ManageClasses";
 import ManageUsers from "../pages/Dashboard/Admin/ManageUsers/ManageUsers";
 import MyClasses from "../pages/Dashboard/MyClasses/MyClasses";
+import MySelectedClasses from "../pages/Dashboard/Student/MySelectedClasses/MySelectedClasses";
 import Home from "../pages/Home/Home/Home";
 import InstructorHome from "../pages/InstructorPage/InstructorHome/InstructorHome";
 import Login from "../pages/Others/Login/Login";
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
     path: '/dashboard',
     element: <PrivateRoutes><DashboardLayout /></PrivateRoutes>,
     children: [
-      // admin pages
+      // admin dashboard
       {
         path: '/dashboard/manage-users',
         element: <ManageUsers />
@@ -49,7 +50,7 @@ const router = createBrowserRouter([
         path: '/dashboard/feedback/:id',
         element: <AdminFeedback/>
       },
-      // instructor pages
+      // instructor dashboard
       {
         path: '/dashboard/add-class',
         element: <AddClass />
@@ -57,6 +58,11 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/my-classes',
         element: <MyClasses />
+      },
+      // student dashboard
+      {
+        path: '/dashboard/my-selected-classes',
+        element: <MySelectedClasses/>
       },
     ]
   },

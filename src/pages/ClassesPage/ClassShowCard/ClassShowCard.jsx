@@ -1,5 +1,5 @@
-const ClassShowCard = ({ data }) => {
-    const { photo, class_name, instructor_name,available_seats, price, summary} = data
+const ClassShowCard = ({ data ,handleSelectClass}) => {
+    const {photo, class_name, instructor_name,available_seats, price, summary} = data
     return (
         <div className="grid md:grid-cols-2 gap-3">
             <figure>
@@ -11,7 +11,7 @@ const ClassShowCard = ({ data }) => {
                 <p><span className="font-medium">Available Seats:</span> {available_seats}</p>
                 <p><span className="font-medium">Price:</span> ${price}</p>
                 <p><span className="font-medium">Summery:</span> {summary}</p>
-                <button className="my-btn mt-5 md:mt-auto">Enroll Now</button>
+                <button onClick={()=>handleSelectClass(data)} className="my-btn mt-5 md:mt-auto">Select Now</button>
             </div>
         </div>
     );

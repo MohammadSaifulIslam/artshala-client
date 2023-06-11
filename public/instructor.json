@@ -1,0 +1,56 @@
+[
+  {
+    "photo": "https://img.freepik.com/free-photo/front-view-smiley-man-blending-different-colors-his-painting_23-2148422201.jpg?w=740&t=st=1686232602~exp=1686233202~hmac=3815e9e083360b14bd5cb121363115314a0618da8aac77402782981d6f978d0a",
+    "name": "Rahim Ahmed",
+    "email": "rahim@ahmed.com",
+    "gender": "Male",
+    "role": "instructor",
+    "phone": "+00111777999",
+    "address": "Dhaka"
+  },
+  {
+    "photo": "https://img.freepik.com/free-photo/male-painter-studio-using-watercolor-his-art_52683-109302.jpg?w=360&t=st=1686232697~exp=1686233297~hmac=8b547ae980e544bcb0189978bb92b4fc7f053268d6e887d8d6e32a7c226229e7",
+    "name": "Fardin Khan",
+    "email": "fardin@khan.com",
+    "gender": "Male",
+    "role": "instructor",
+    "phone": "+00111777999",
+    "address": "Dhaka"
+  },
+  {
+    "photo": "https://img.freepik.com/free-photo/portrait-smiling-male-painter-showing-his-collection-paint-brushes-sitting-colorful-painting-art-gallery_662251-345.jpg?w=740&t=st=1686232621~exp=1686233221~hmac=87c46dd7c7a8313ebca5ed0459c493ae5221cf1e21f2807c0ae7f5c8ab3cb53d",
+    "name": "Mohammed Rahman",
+    "email": "mohammed@rahman.com",
+    "gender": "Male",
+    "role": "instructor",
+    "phone": "+00111777999",
+    "address": "Dhaka"
+  },
+  {
+    "photo": "https://img.freepik.com/free-photo/man-painting-home_23-2148017372.jpg?w=740&t=st=1686233165~exp=1686233765~hmac=29bbd86d997bccd7b783c26be8f671542dec421d37f046c2c6995f42c5a48f8b",
+    "name": "Nahidur Rahman",
+    "email": "nahidur@rahman.com",
+    "gender": "Male",
+    "role": "instructor",
+    "phone": "+00111777999",
+    "address": "Dhaka"
+  },
+  {
+    "photo": "https://img.freepik.com/free-photo/artist-with-color-palette_23-2148017554.jpg?w=740&t=st=1686232660~exp=1686233260~hmac=2f90b4ce9f46ef52fe99d6f2fa3ae660d17ed6a690b17bfe54c2464c8394b32f",
+    "name": "Kamal Ahmed",
+    "email": "kamal@ahmed.com",
+    "gender": "Male",
+    "role": "instructor",
+    "phone": "+00111777999",
+    "address": "Dhaka"
+  },
+  {
+    "photo": "https://img.freepik.com/free-photo/van-gogh-portrait_23-2149737811.jpg?w=360&t=st=1686233192~exp=1686233792~hmac=8a5c282bc769d9f759b56364de3d721728c30db9710e73f3696481a80b90a357",
+    "name": "Tanim Chowdhury",
+    "email": "tanim@chowdhury.com",
+    "gender": "Male",
+    "role": "instructor",
+    "phone": "+00111777999",
+    "address": "Dhaka"
+  }
+]

@@ -1,0 +1,91 @@
+[
+  {
+    "available_seats": 15,
+    "class_name": "Calligraphy Masterclass",
+    "instructor_name": "Abdul Haque",
+    "photo": "https://i.pinimg.com/564x/ed/6a/1f/ed6a1ff13621af38b4b9b362faecc3b2.jpg",
+    "instructor_email": "abdul@haque.com",
+    "price": 180.0,
+    "status": "Approved",
+    "enrolled_students": "30",
+    "summary": "Immerse yourself in the art of calligraphy and explore the elegant beauty of lettering. Discover various styles and techniques to create stunning compositions."
+  },
+
+  {
+    "available_seats": 8,
+    "photo": "https://img.freepik.com/free-photo/abstract-nature-painted-with-watercolor-autumn-leaves-backdrop-generated-by-ai_188544-9806.jpg?w=826&tphoto=1686216196~exp=1686216796~hmac=74ea71e43f94e0d3ad2f2bf363c53869acf69d7f23296dbcf39fe669e9f9cce0",
+    "class_name": "Abstract Painting",
+    "instructor_name": "Saiful Islam",
+    "instructor_email": "saiful@islam.com",
+    "price": 300.0,
+    "status": "Approved",
+    "enrolled_students": "34",
+    "summary": "Dive into the world of abstract art and learn to create vibrant and expressive paintings. Explore different techniques, color theory, and develop your unique artistic style."
+  },
+  {
+    "available_seats": 10,
+    "class_name": "Oil Painting Workshop",
+    "instructor_name": "Saiful Islam",
+    "photo": "https://cdn.shopify.com/s/files/1/0508/0409/7187/products/2_cc8a3480-27f6-4e36-ac6e-3b19b3e23b88_430x.jpg?v=1604991648",
+    "instructor_email": "saiful@islam.com",
+    "price": 220.0,
+    "status": "Approved",
+    "enrolled_students": "45",
+    "summary": "Join this intensive oil painting workshop and explore the versatile medium of oil paints. Learn techniques for blending, glazing, and creating rich textures in your artwork."
+  },
+  {
+    "available_seats": 15,
+    "photo": "https://img.freepik.com/free-vector/watercolor-natutral-landscape-with-trees_23-2148235621.jpg?w=740&t=st=1686215999~exp=1686216599~hmac=03e9ac42ef35c643d5e81776041ae0fc35ca050dd33b65385photo",
+    "class_name": "Watercolor Landscapes",
+    "instructor_name": "Rahim Ahmed",
+    "instructor_email": "rahim@ahmed.com",
+    "price": 200.0,
+    "status": "Approved",
+    "enrolled_students": "24",
+    "summary": "Learn the art of creating stunning watercolor landscapes in this immersive class. Explore various techniques and unleash your creativity to capture the beauty of nature."
+  },
+  {
+    "available_seats": 10,
+    "photo": "https://img.freepik.com/free-photo/hands-clay-sculpting-side-view_23-2149730844.jpg?w=740&t=st=1686216083~exp=1686216683~hmac=e17ada70b1c00ba59c3a8f47c958ea2234099438f4389247dphoto",
+    "class_name": "Sculpture Techniques",
+    "instructor_name": "Fardin Khan",
+    "instructor_email": "fardin@khan.com",
+    "price": 250.0,
+    "status": "Approved",
+    "enrolled_students": "32",
+    "summary": "Discover the world of sculpture and learn essential techniques to shape clay and other materials into expressive art forms. Unleash your imagination and bring your ideas to life."
+  },
+  {
+    "available_seats": 12,
+    "photo": "https://img.freepik.com/free-photo/picture-with-drawing-man-s-face_1122-1031.jpg?w=360&t=st=1686216144~exp=1686216744~hmac=072556a409d8460bd392753d72336471ae10b52fd9bda7fc7photo",
+    "class_name": "Portrait Drawing",
+    "instructor_name": "Mohammed Rahman",
+    "instructor_email": "mohammed@rahman.com",
+    "price": 180.0,
+    "status": "Approved",
+    "enrolled_students": "10",
+    "summary": "Master the art of portrait drawing and capture the likeness and personality of your subjects. Explore techniques for achieving realistic proportions and conveying emotions."
+  },
+  {
+    "available_seats": 12,
+    "photo": "https://img.freepik.com/free-photo/owl-bird-colorful-flowers-generative-ai_206725-745.jpg?w=360&t=st=1686221221~exp=1686221821~hmac=ace894d74c154628c11975e7c9da0a9003aa0b3403d5bd451photo",
+    "class_name": "Digital Illustration",
+    "instructor_name": "Tanim Chowdhury",
+    "instructor_email": "tanim@chowdhury.com",
+    "price": 250.0,
+    "status": "Approved",
+    "enrolled_students": "26",
+    "summary": "Learn the essentials of digital illustration and unleash your creativity using digital tools. From sketching to coloring, master the techniques for creating captivating artworks."
+  },
+  {
+    "available_seats": 15,
+    "class_name": "Mixed Media Art",
+    "instructor_name": "Nahidur Rahman",
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/7/77/Alberto_Baumann_Eredit%C3%A0_del_ventesimo_secolo_1980_cm_100x100.jpg",
+    "instructor_email": "nahidur@rahman.com",
+    "price": 180.0,
+    "status": "Approved",
+    "enrolled_students": "17",
+    "summary": "Explore the exciting realm of mixed media art and combine various materials and techniques to create unique and visually engaging artworks."
+  }
+]

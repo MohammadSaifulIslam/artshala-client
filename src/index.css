@@ -19,3 +19,7 @@ body {
 .btn-small {
   @apply cursor-pointer rounded-md text-sm font-medium bg-slate-200 p-2 active:scale-110 duration-300;
 }
+.thumbs-wrapper ul {
+  display: flex !important;
+  justify-content: center !important;
+}

@@ -6,7 +6,6 @@ const ClassCard = ({data}) => {
         <img src={photo} alt="class image" className="w-full h-[400px] object-cover group-hover:scale-110 duration-500 "/>
         </figure>
          <h4 className="text-2xl text-center font-semibold mt-4 cursor-pointer group-hover:text-primary duration-500">{class_name}</h4>
-
      </div>
     );
 };
