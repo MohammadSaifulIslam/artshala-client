@@ -1,18 +1,34 @@
 import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import Swal from "sweetalert2";
 import useAuth from "../../../../hooks/useAuth";
 import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
 import MySelectedClassRow from "./MySelectedClassRow/MySelectedClassRow";
 
 const MySelectedClasses = () => {
-    const {user}= useAuth()
-    const {data : selectedClass = []}= useQuery(['select-class'], async()=>{
+    const { user } = useAuth()
+    const { data: selectedClass = [],refetch } = useQuery(['select-class'], async () => {
         const res = await fetch(`${import.meta.env.VITE_LOCALHOST}/select-class/${user?.email}`)
         return await res.json()
     })
-    console.log({selectedClass})
+    const handleRemoveClass = (id) => {
+        axios.delete(`${import.meta.env.VITE_LOCALHOST}/select-class/${id}`)
+            .then(res => {
+                if (res.data.deletedCount) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Class removed from select',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    refetch()
+                }
+            })
+            .catch(err => console.log(err))
+    }
     return (
         <div className="my-10">
-            <SectionTitle title={'My Selected Classes'}/>
+            <SectionTitle title={'My Selected Classes'} />
             <div className="overflow-x-auto mt-10 w-full">
                 <table className="table w-full">
                     {/* head */}
@@ -30,9 +46,9 @@ const MySelectedClasses = () => {
                     </thead>
                     <tbody>
                         {/* row 1 */}
-                     {
-                        selectedClass.map((classData,index) => <MySelectedClassRow key={classData._id} classData={classData} index={index}></MySelectedClassRow>)
-                     }
+                        {
+                            selectedClass.map((classData, index) => <MySelectedClassRow key={classData._id} classData={classData} index={index} handleRemoveClass={handleRemoveClass}></MySelectedClassRow>)
+                        }
 
                     </tbody>
                 </table>

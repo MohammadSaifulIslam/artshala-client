@@ -1,6 +1,8 @@
 import { AiTwotoneDelete } from "react-icons/ai";
-const MySelectedClassRow = ({ classData, index }) => {
-    const { photo, class_name, price} = classData;
+import { Link } from "react-router-dom";
+
+const MySelectedClassRow = ({ classData, index , handleRemoveClass}) => {
+    const {_id, photo, class_name, price} = classData;
     return (
         <tr >
             <th>
@@ -19,10 +21,10 @@ const MySelectedClassRow = ({ classData, index }) => {
             <td>BDT {price}</td>
 
             <td>
-                <button className="btn-small">Pay Now</button>
+               <Link to={`/dashboard/payment/${_id}`}> <button className="btn-small">Pay Now</button></Link>
             </td>
             <td>
-                <button className="btn-small bg-error"><AiTwotoneDelete className="text-error w-6 h-6"/></button>
+                <button onClick={()=>handleRemoveClass(_id)} className="btn-small bg-error"><AiTwotoneDelete className="text-error w-6 h-6"/></button>
             </td>
         </tr>
     );
