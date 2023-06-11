@@ -7,7 +7,7 @@ import UserTableRow from "./UserTableRow/UserTableRow";
 const ManageUsers = () => {
     const { data: users = [], refetch } = useQuery(['users'], async () => {
         const res = await fetch(`${import.meta.env.VITE_LOCALHOST}/users`)
-        return res.json()
+        return await res.json()
     })
 
     // make user instructor

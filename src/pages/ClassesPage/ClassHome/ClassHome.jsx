@@ -23,7 +23,7 @@ const ClassHome = () => {
             if(res.data.acknowledged){
                 Swal.fire({
                     icon: 'success',
-                    title: 'You successfully added a class',
+                    title: 'You successfull select the class',
                     showConfirmButton: false,
                     timer: 1500
                 })
