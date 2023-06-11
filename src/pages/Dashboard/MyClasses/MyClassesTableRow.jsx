@@ -19,7 +19,9 @@ const MyClassesTableRow = ({ classData, index }) => {
             <td>{enrolled_students}</td>
             <td>{status}</td>
             <td>
+                {classData.feedback && 
                 <button className="btn btn-xs">View Feeback</button>
+                }
             </td>
             <td>
                 <button className="btn btn-xs">Update</button>

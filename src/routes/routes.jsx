@@ -4,6 +4,7 @@ import DashboardLayout from "../layouts/DashboardLayout";
 import Main from "../layouts/Main";
 import ClassHome from "../pages/ClassesPage/ClassHome/ClassHome";
 import AddClass from "../pages/Dashboard/AddClass/AddClass";
+import AdminFeedback from "../pages/Dashboard/Admin/ManageClasses/AdminFeedback/AdminFeedback";
 import ManageClasses from "../pages/Dashboard/Admin/ManageClasses/ManageClasses";
 import ManageUsers from "../pages/Dashboard/Admin/ManageUsers/ManageUsers";
 import MyClasses from "../pages/Dashboard/MyClasses/MyClasses";
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/manage-classes',
         element: <ManageClasses />
+      },
+      {
+        path: '/dashboard/feedback/:id',
+        element: <AdminFeedback/>
       },
       // instructor pages
       {

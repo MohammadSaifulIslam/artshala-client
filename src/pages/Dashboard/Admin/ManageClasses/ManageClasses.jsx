@@ -42,26 +42,6 @@ const ManageClasses = () => {
             })
     }
 
-    const handleFeedback = (id) => {
-        event.preventDefault()
-        const feedback = event.target.feedback.value;
-        console.log(id, feedback)
-        axios.patch(`${import.meta.env.VITE_LOCALHOST}/class-feedback/${id}`,{feedback})
-        .then(res => {
-            if(res.data.modifiedCount){
-                Swal.fire({
-                    icon: 'success',
-                    title: `You feedback successfully send`,
-                    showConfirmButton: false,
-                    timer: 1500
-                })
-            }
-        })
-        .catch(err=> console.log(err))
-        document.getElementById('my_modal_6').checked = false
-        event.target.reset()
-    }
-
     return (
         <div className='my-10'>
             <SectionTitle title={'Manage Classes'} />
@@ -85,7 +65,7 @@ const ManageClasses = () => {
                     <tbody>
                         {/* row 1 */}
                         {
-                            allClassData.map((classData, index) => <ManageClassesTableRow key={classData._id} classData={classData} index={index} handleApproved={handleApproved} handleDeny={handleDeny} handleFeedback={handleFeedback}></ManageClassesTableRow>
+                            allClassData.map((classData, index) => <ManageClassesTableRow key={classData._id} classData={classData} index={index} handleApproved={handleApproved} handleDeny={handleDeny} ></ManageClassesTableRow>
                             )
                         }
                     </tbody>

@@ -23,16 +23,16 @@ const [classesData, setClassesData] = useState([])
                 <table className="table w-full">
                     {/* head */}
                     <thead>
-                        <tr>
-                            <th>
+                        <tr className="text-white">
+                            <th className="bg-primary">
                                 #
                             </th>
-                            <th>Photo</th>
-                            <th>Class Name</th>
-                            <th>Enrolled Students</th>
-                            <th>Status</th>
-                            <th>Feedback</th>
-                            <th>Actions</th>
+                            <th className="bg-primary">Photo</th>
+                            <th className="bg-primary">Class Name</th>
+                            <th className="bg-primary">Enrolled Students</th>
+                            <th className="bg-primary" >Status</th>
+                            <th className="bg-primary">Feedback</th>
+                            <th className="bg-primary">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
