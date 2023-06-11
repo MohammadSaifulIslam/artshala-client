@@ -1,10 +1,12 @@
-const ManageClassesTableRow = ({ classData, index,handleApproved, handleDeny }) => {
+import FeedbackModal from "../FeedbackModal/FeedbackModal";
 
-    const {photo, class_name, instructor_email, instructor_name, available_seats, price, status, _id} =classData
+const ManageClassesTableRow = ({ classData, index, handleApproved, handleDeny, handleFeedback }) => {
+
+    const { photo, class_name, instructor_email, instructor_name, available_seats, price, status, _id } = classData
     return (
         <tr >
             <th>
-               {index + 1}
+                {index + 1}
             </th>
             <td>
                 <div className="avatar">
@@ -26,9 +28,13 @@ const ManageClassesTableRow = ({ classData, index,handleApproved, handleDeny }) 
             <td>{status}</td>
             <th>
                 <div className='flex gap-3'>
-                    <button onClick={()=>handleApproved(_id)} className={`text-sm font-medium bg-slate-200 p-2 rounded-md ${status === 'Approved' || status === "Denied"  ? 'btn-disabled' : ''}`}>Approve</button>
-                    <button onClick={()=> handleDeny(_id)} className={`text-sm font-medium bg-slate-200 p-2 rounded-md ${status === 'Approved' || status === "Denied" ? 'btn-disabled' : ''}`}>Deny</button>
-                    <button className={`text-sm font-medium bg-slate-200 p-2 rounded-md`}>Feadback</button>
+                    <button onClick={() => handleApproved(_id)} className={`text-sm font-medium bg-slate-200 p-2 rounded-md ${status === 'Approved' || status === "Denied" ? 'btn-disabled' : ''}`}>Approve</button>
+                    <button onClick={() => handleDeny(_id)} className={`text-sm font-medium bg-slate-200 p-2 rounded-md ${status === 'Approved' || status === "Denied" ? 'btn-disabled' : ''}`}>Deny</button>
+                    {/* admin feedback modal */}
+                    <label htmlFor="my_modal_6" className={`text-sm font-medium bg-slate-200 p-2 rounded-md cursor-pointer`}>
+                        Feadback
+                    </label>
+                    <FeedbackModal handleFeedback={handleFeedback} id={_id}/>
                 </div>
             </th>
         </tr>
