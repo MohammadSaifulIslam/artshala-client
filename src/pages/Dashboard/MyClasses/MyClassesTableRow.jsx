@@ -1,6 +1,7 @@
+import FeedbackViewModal from "../../../components/FeedbackViewModal/FeedbackViewModal";
 
 const MyClassesTableRow = ({ classData, index }) => {
-    const {photo, class_name, enrolled_students,status} = classData;
+    const { photo, class_name, enrolled_students, status, feedback } = classData;
     return (
         <tr >
             <th>
@@ -17,14 +18,17 @@ const MyClassesTableRow = ({ classData, index }) => {
                 {class_name}
             </td>
             <td>{enrolled_students}</td>
-            <td>{status}</td>
+            <td className={`${status === 'Approved' ? 'text-green-600' : status === 'Denied' ? 'text-red-600' : ''}`}>{status}</td>
             <td>
-                {classData.feedback && 
-                <button className="btn btn-xs">View Feeback</button>
+                {classData.feedback &&
+                    <>
+                        <label htmlFor="my_modal_6" className="btn-small">View feedback</label>
+                        <FeedbackViewModal feedback={feedback}  />
+                    </>
                 }
             </td>
             <td>
-                <button className="btn btn-xs">Update</button>
+                <button className="btn-small">Update</button>
             </td>
         </tr>
     );

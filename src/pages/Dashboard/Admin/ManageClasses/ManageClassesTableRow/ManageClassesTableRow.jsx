@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const ManageClassesTableRow = ({ classData, index, handleApproved, handleDeny}) => {
+const ManageClassesTableRow = ({ classData, index, handleApproved, handleDeny }) => {
 
     const { photo, class_name, instructor_email, instructor_name, available_seats, price, status, _id } = classData;
     return (
@@ -25,7 +25,7 @@ const ManageClassesTableRow = ({ classData, index, handleApproved, handleDeny}) 
             </td>
             <td>{available_seats}</td>
             <td>{price}</td>
-            <td>{status}</td>
+            <td className={`${status === 'Approved' ? 'text-green-600' : status === 'Denied' ? 'text-red-600' : ''}`}>{status}</td>
             <th>
                 <div className='flex gap-3'>
                     <button onClick={() => handleApproved(_id)} className={`text-sm font-medium bg-slate-200 p-2 rounded-md ${status === 'Approved' || status === "Denied" ? 'btn-disabled' : ''}`}>Approve</button>
