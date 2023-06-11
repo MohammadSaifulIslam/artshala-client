@@ -5,7 +5,7 @@ import ClassShowCard from "../ClassShowCard/ClassShowCard";
 const ClassHome = () => {
     const [classData, setClassData] = useState([])
     useEffect(() => {
-        fetch('/class.json')
+        fetch(`${import.meta.env.VITE_LOCALHOST}/classes`)
             .then(res => res.json())
             .then(data => setClassData(data))
     }, [])
@@ -15,7 +15,7 @@ const ClassHome = () => {
             <div className="my-container grid md:grid-cols-2 gap-8 mt-10">
                 {
                     classData.map(data =>
-                       <ClassShowCard key={data.id} data={data}></ClassShowCard>
+                       <ClassShowCard key={data._id} data={data}></ClassShowCard>
                     )
                 }
             </div>

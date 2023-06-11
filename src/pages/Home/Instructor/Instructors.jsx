@@ -5,9 +5,9 @@ import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 const Instructors = () => {
     const [instructorsData, setInstructorsData] = useState([]);
     useEffect(() => {
-        fetch('/instructor.json')
+        fetch(`${import.meta.env.VITE_LOCALHOST}/instructors`)
             .then(res => res.json())
-            .then(data => setInstructorsData(data.slice(0,6)))
+            .then(data => setInstructorsData(data.slice(0, 6)))
     }, [])
     return (
         <section className="my-container mt-20">
@@ -15,8 +15,8 @@ const Instructors = () => {
             <div className="grid md:grid-cols-4 gap-5 mt-10">
                 {
                     instructorsData.map(data =>
-                        <InstructorCard key={data.id} data={data}></InstructorCard>
-                   )
+                        <InstructorCard key={data._id} data={data}></InstructorCard>
+                    )
                 }
             </div>
         </section>

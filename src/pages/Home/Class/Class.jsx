@@ -13,7 +13,7 @@ import './Class.css';
 const Class = () => {
     const [classData, setClassData] = useState([])
     useEffect(() => {
-        fetch('/class.json')
+        fetch(`${import.meta.env.VITE_LOCALHOST}/classes`)
             .then(res => res.json())
             .then(data => setClassData(data.slice(0, 6)))
     }, [])
@@ -32,7 +32,7 @@ const Class = () => {
             
                  {
                         classData.map(data =>
-                            <SwiperSlide key={data.id}>
+                            <SwiperSlide key={data._id}>
                                 <ClassCard data={data}></ClassCard>
                             </SwiperSlide>
 

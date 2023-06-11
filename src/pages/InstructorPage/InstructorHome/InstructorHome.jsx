@@ -5,7 +5,7 @@ import SectionBanner from "../../Shared/SectionBanner/SectionBanner";
 const InstructorHome = () => {
     const [instructorsData, setInstructorsData] = useState([]);
     useEffect(() => {
-        fetch('/instructor.json')
+        fetch(`${import.meta.env.VITE_LOCALHOST}/instructors`)
             .then(res => res.json())
             .then(data => setInstructorsData(data))
     }, [])
@@ -16,7 +16,7 @@ const InstructorHome = () => {
                 <div className="grid md:grid-cols-4 gap-5 mt-10">
                     {
                         instructorsData.map(data =>
-                            <InstructorCard key={data.id} data={data} email={true}></InstructorCard>
+                            <InstructorCard key={data._id} data={data} email={true}></InstructorCard>
                         )
                     }
                 </div>
