@@ -1,8 +1,16 @@
 import usePaymentData from "../../../../hooks/usePaymentData";
+import websiteTitle from "../../../../utility/websiteTitle";
+import LoadingSpinner from "../../../Others/LoadingSpinner/LoadingSpinner";
 import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
 
 const PaymentHistory = () => {
-    const { paymentData } = usePaymentData()
+    const { paymentData, isLoading } = usePaymentData();
+
+    websiteTitle('Payment History - Artshala')
+
+    if (isLoading) {
+        return <LoadingSpinner />
+    }
     return (
         <div className="my-10">
             <SectionTitle title={'My Payment History'} />

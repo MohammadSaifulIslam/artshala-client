@@ -2,6 +2,7 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import useAuth from "../../../hooks/useAuth";
+import websiteTitle from "../../../utility/websiteTitle";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 
 const AddClass = () => {
@@ -9,7 +10,7 @@ const AddClass = () => {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = data => {
-        const {available_seats,class_name,photo, price,summary} = data;
+        const { available_seats, class_name, photo, price, summary } = data;
 
         // photo upload on db
         const imgbbURL = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMAGE_API_KEY}`;
@@ -23,23 +24,25 @@ const AddClass = () => {
             .then(data => {
                 if (data.success) {
                     const imgUrl = data.data.display_url;
-                    const classData =  {available_seats : parseInt(available_seats) ,class_name, instructor_name : user?.displayName ,photo : imgUrl , instructor_email : user?.email ,price : parseFloat(price),summary, enrolled_students: 0 , status: 'Pending'}
+                    const classData = { available_seats: parseInt(available_seats), class_name, instructor_name: user?.displayName, photo: imgUrl, instructor_email: user?.email, price: parseFloat(price), summary, enrolled_students: 0, status: 'Pending' }
                     console.log(classData)
-                  axios.post(`${import.meta.env.VITE_LOCALHOST}/class`, classData )
-                  .then(res => {
-                    if(res.data.acknowledged){
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'You successfully added a class',
-                            showConfirmButton: false,
-                            timer: 1500
+                    axios.post(`${import.meta.env.VITE_LOCALHOST}/class`, classData)
+                        .then(res => {
+                            if (res.data.acknowledged) {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'You successfully added a class',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                            }
                         })
-                    }
-                  })
-                  .catch(err=> console.log(err))
+                        .catch(err => console.log(err))
                 }
             })
     }
+
+    websiteTitle('Add Class - Artshala')
 
     return (
         <section className="my-20">

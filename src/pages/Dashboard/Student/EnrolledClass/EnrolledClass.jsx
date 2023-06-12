@@ -1,9 +1,17 @@
 import usePaymentData from "../../../../hooks/usePaymentData";
+import websiteTitle from "../../../../utility/websiteTitle";
+import LoadingSpinner from "../../../Others/LoadingSpinner/LoadingSpinner";
 import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
 import EnrolledClassRow from "./EnrolledClassRow/EnrolledClassRow";
 
 const EnrolledClass = () => {
-    const { paymentData } = usePaymentData()
+    const { paymentData, isLoading } = usePaymentData()
+
+    websiteTitle('Enrolled Classes - Artshala')
+
+    if (isLoading) {
+        return <LoadingSpinner />
+    }
     return (
         <div className="my-10">
             <SectionTitle title={'My Enrolled Classes'} />

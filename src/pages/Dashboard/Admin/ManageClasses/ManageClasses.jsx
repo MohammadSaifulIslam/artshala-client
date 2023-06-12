@@ -4,13 +4,16 @@ import SectionTitle from '../../../Shared/SectionTitle/SectionTitle';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import websiteTitle from '../../../../utility/websiteTitle';
+import LoadingSpinner from '../../../Others/LoadingSpinner/LoadingSpinner';
 import ManageClassesTableRow from './ManageClassesTableRow/ManageClassesTableRow';
 
 const ManageClasses = () => {
-
-    const { data: allClassData = [], refetch } = useQuery(['allClasses'], async () => {
+    
+    const { data: allClassData = [], refetch , isLoading} = useQuery(['allClasses'], async () => {
         const res = await axios.get(`${import.meta.env.VITE_LOCALHOST}/all-class`)
-        return res.data
+        
+        return res.data;
     })
 
     const handleApproved = (id) => {
@@ -40,6 +43,12 @@ const ManageClasses = () => {
                     refetch()
                 }
             })
+    }
+
+    websiteTitle('Manage Classes - Artshala')
+
+    if (isLoading) {
+        return <LoadingSpinner />
     }
 
     return (

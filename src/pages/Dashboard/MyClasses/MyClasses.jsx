@@ -1,20 +1,30 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import useAuth from "../../../hooks/useAuth";
+import websiteTitle from "../../../utility/websiteTitle";
+import LoadingSpinner from "../../Others/LoadingSpinner/LoadingSpinner";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 import MyClassesTableRow from "./MyClassesTableRow";
 
 const MyClasses = () => {
-const [classesData, setClassesData] = useState([])
-    const {user} = useAuth();
-    useEffect( ()=>{
+    const [isLoading, setIsLoading] = useState(true)
+    const [classesData, setClassesData] = useState([])
+    const { user } = useAuth();
+    useEffect(() => {
         axios.get(`${import.meta.env.VITE_LOCALHOST}/class/${user?.email}`)
-        .then(res => {
-            console.log(res)
-            setClassesData(res.data)
-        })
-        .catch(err => console.log(err))
-    } ,[user])
+            .then(res => {
+                console.log(res)
+                setClassesData(res.data)
+                setIsLoading(false)
+            })
+            .catch(err => console.log(err))
+    }, [user])
+
+    websiteTitle('My Classes - Artshala')
+
+    if (isLoading) {
+        return <LoadingSpinner />
+    }
     return (
         <div className="my-20 ">
             <SectionTitle title={'My Classes'} />

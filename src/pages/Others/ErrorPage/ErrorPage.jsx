@@ -1,8 +1,10 @@
 import Lottie from "lottie-react";
 import { Link } from "react-router-dom";
 import errorAnimation from '../../../assets/error/93899-error-404.json';
+import websiteTitle from "../../../utility/websiteTitle";
 const ErrorPage = () => {
-    
+  websiteTitle('404 - Artshala')
+
     return (
         <section className='h-screen w-full bg-[#e5f9ff] relative' >
         <Lottie className="h-full" animationData={errorAnimation} loop={true} />

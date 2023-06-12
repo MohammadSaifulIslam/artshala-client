@@ -2,12 +2,14 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import Swal from "sweetalert2";
 import useAuth from "../../../../hooks/useAuth";
+import websiteTitle from "../../../../utility/websiteTitle";
+import LoadingSpinner from "../../../Others/LoadingSpinner/LoadingSpinner";
 import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
 import MySelectedClassRow from "./MySelectedClassRow/MySelectedClassRow";
 
 const MySelectedClasses = () => {
     const { user } = useAuth()
-    const { data: selectedClass = [],refetch } = useQuery(['select-class'], async () => {
+    const { data: selectedClass = [],refetch , isLoading} = useQuery(['select-class'], async () => {
         const res = await fetch(`${import.meta.env.VITE_LOCALHOST}/select-class/${user?.email}`)
         return await res.json()
     })
@@ -25,6 +27,12 @@ const MySelectedClasses = () => {
                 }
             })
             .catch(err => console.log(err))
+    }
+
+    websiteTitle('My Selected Classes - Artshala')
+
+    if (isLoading) {
+        return <LoadingSpinner />
     }
     return (
         <div className="my-10">

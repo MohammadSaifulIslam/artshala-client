@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+import websiteTitle from "../../../../../utility/websiteTitle";
 import SectionTitle from "../../../../Shared/SectionTitle/SectionTitle";
 
 const AdminFeedback = () => {
@@ -25,6 +26,9 @@ const AdminFeedback = () => {
         event.target.reset()
         navigate('/dashboard/manage-classes')
     }
+
+    websiteTitle('Feedback - Artshala')
+
 
     return (
         <div className="my-10">

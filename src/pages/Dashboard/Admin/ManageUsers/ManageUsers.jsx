@@ -1,11 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import Swal from "sweetalert2";
+import websiteTitle from "../../../../utility/websiteTitle";
+import LoadingSpinner from "../../../Others/LoadingSpinner/LoadingSpinner";
 import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
 import UserTableRow from "./UserTableRow/UserTableRow";
 
 const ManageUsers = () => {
-    const { data: users = [], refetch } = useQuery(['users'], async () => {
+    const { data: users = [], refetch , isLoading } = useQuery(['users'], async () => {
         const res = await fetch(`${import.meta.env.VITE_LOCALHOST}/users`)
         return await res.json()
     })
@@ -41,6 +43,12 @@ const ManageUsers = () => {
                 console.log(res.data)
             })
             .catch(err => console.log(err))
+    }
+
+    websiteTitle('Manage Users - Artshala')
+
+    if (isLoading) {
+        return <LoadingSpinner />
     }
     return (
         <div className="my-10">
