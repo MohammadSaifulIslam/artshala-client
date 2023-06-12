@@ -23,3 +23,7 @@ body {
   display: flex !important;
   justify-content: center !important;
 }
+
+.disabled-btn {
+  @apply btn-disabled;
+}

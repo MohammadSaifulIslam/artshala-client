@@ -7,7 +7,7 @@ import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 
 const AddClass = () => {
     const { user } = useAuth()
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit , reset} = useForm();
 
     const onSubmit = data => {
         const { available_seats, class_name, photo, price, summary } = data;
@@ -36,6 +36,7 @@ const AddClass = () => {
                                     timer: 1500
                                 })
                             }
+                            reset()
                         })
                         .catch(err => console.log(err))
                 }
