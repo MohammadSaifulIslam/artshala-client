@@ -9,7 +9,7 @@ import SocialLogin from "../../Shared/SocialLogin/SocialLogin";
 
 const Register = () => {
     const { createUser, updateUser, } = useAuth()
-    const { register, handleSubmit,reset , formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const [error, setError] = useState(null);
     const [showPass, setShowPass] = useState(false);
     const navigate = useNavigate();
@@ -17,6 +17,25 @@ const Register = () => {
     const onSubmit = data => {
         setError(null);
         const { name, email, photo, password, address, phone, gender } = data;
+
+        // password validation
+        if (!/(?=.*[A-Z])/.test(password)) {
+            setError('password must have a uppercase')
+            return
+        } else if (!/(?=.*[a-z])/.test(password)) {
+            setError('password must have a lowercase')
+            return
+        } else if (!/(?=.*\d)/.test(password)) {
+            setError('password must have a number')
+            return
+        } else if (!/(?=.*[-\!\@\#\$\.\%\&\*])/.test(password)) {
+            setError('password must have a special character')
+            return
+        }
+        else if (password.length < 6) {
+            setError('password must be at least 6 characters')
+            return
+        }
 
 
         const imgbbURL = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMAGE_API_KEY}`;
@@ -59,7 +78,7 @@ const Register = () => {
                         })
                 }
             })
-            .catch(err=> setError(err.message))
+            .catch(err => setError(err.message))
     };
 
 

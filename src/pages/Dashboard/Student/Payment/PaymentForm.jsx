@@ -76,7 +76,7 @@ const PaymentForm = ({ classInfo }) => {
             // TODO: next step
             const paymentData = {
                 price,
-                transectionId: transectionId,
+                transectionId: paymentIntent.id,
                 name: user?.displayName,
                 email: user?.email,
                 date: new Date(),
