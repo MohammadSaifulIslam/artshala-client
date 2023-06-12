@@ -37,9 +37,9 @@ const Payment = () => {
             <SectionTitle title={'Payment Now'} />
             <div className="mt-10">
                 <h3 className="text-xl font-medium mb-4">You are one step away to enroll the class.</h3>
-                <p>We ensure you that our payment system is more than secure. So, make a payment and be a student of the class <span className="text-primary font-medium text-xl">{classInfo.class_name}</span>.</p>
+                <p>We ensure you that our payment system is more than secure. So, make a payment and be a student of the class <span className="text-[#FFB347] font-medium text-xl">{classInfo.class_name}</span>.</p>
 
-                <h5 className="text-lg mt-5 font-medium">Payable Amount: BDT <span className="text-primary">{classInfo?.price}</span></h5>
+                <h5 className="text-lg mt-5 font-medium">Payable Amount: BDT <span className="text-[#FFB347]">{classInfo?.price}</span></h5>
             </div>
             <div>
                 <Elements stripe={stripePromise}>

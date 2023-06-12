@@ -1,6 +1,7 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAuth from "../../../../hooks/useAuth";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
@@ -14,7 +15,7 @@ const PaymentForm = ({ classInfo }) => {
     const { user } = useAuth()
     const [processing, setProcessing] = useState(false);
     const [transectionId, setTransectionId] = useState('');
-
+    const navigate = useNavigate();
     console.log(processing)
     const { price, _id, class_name, photo, instructor_name, available_seats, class_id } = classInfo;
     console.log(available_seats)
@@ -97,8 +98,8 @@ const PaymentForm = ({ classInfo }) => {
                                 if (res.data.deletedCount) {
 
                                     // reduce available seat
-                                    const reduceSeats = available_seats - 1;
-                                    axios.patch(`${import.meta.env.VITE_LOCALHOST}/class/${class_id}`, { reduceSeats })
+
+                                    axios.patch(`${import.meta.env.VITE_LOCALHOST}/class/${class_id}`)
                                         .then(res => {
                                             if (res.data.modifiedCount) {
                                                 Swal.fire({
@@ -107,6 +108,7 @@ const PaymentForm = ({ classInfo }) => {
                                                     showConfirmButton: false,
                                                     timer: 1500
                                                 })
+                                                navigate('/dashboard/enrolled-classes')
                                             }
                                         })
                                         .catch(err => console.log(err))

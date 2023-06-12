@@ -58,13 +58,13 @@ const ManageUsers = () => {
                     {/* head */}
                     <thead>
                         <tr>
-                            <th className="bg-primary">
+                            <th className="bg-[#FFB347]">
                                 #
                             </th>
-                            <th className="bg-primary">Photo</th>
-                            <th className="bg-primary">Name</th>
-                            <th className="bg-primary">Email</th>
-                            <th className="bg-primary">Actions</th>
+                            <th className="bg-[#FFB347]">Photo</th>
+                            <th className="bg-[#FFB347]">Name</th>
+                            <th className="bg-[#FFB347]">Email</th>
+                            <th className="bg-[#FFB347]">Actions</th>
                         </tr>
                     </thead>
                     <tbody>

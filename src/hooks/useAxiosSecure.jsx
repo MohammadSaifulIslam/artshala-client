@@ -9,7 +9,7 @@ const axiosSecure = axios.create({
 });
 const useAxiosSecure = () => {
     const navigate = useNavigate();
-    const { logOut } = useAuth();
+    const { logOut} = useAuth();
 
 
     useEffect(() => {

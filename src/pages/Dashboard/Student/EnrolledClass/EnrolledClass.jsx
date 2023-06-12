@@ -20,13 +20,13 @@ const EnrolledClass = () => {
                     {/* head */}
                     <thead>
                         <tr className="text-white">
-                            <th className="bg-primary">
+                            <th className="bg-[#FFB347]">
                                 #
                             </th>
-                            <th className="bg-primary">Photo</th>
-                            <th className="bg-primary">Class Name</th>
-                            <th className="bg-primary">Price</th>
-                            <th className="bg-primary" >Enrolled Date</th>
+                            <th className="bg-[#FFB347]">Photo</th>
+                            <th className="bg-[#FFB347]">Class Name</th>
+                            <th className="bg-[#FFB347]">Price</th>
+                            <th className="bg-[#FFB347]" >Enrolled Date</th>
                         </tr>
                     </thead>
                     <tbody>

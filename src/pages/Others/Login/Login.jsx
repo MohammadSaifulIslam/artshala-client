@@ -33,8 +33,8 @@ const Login = () => {
     };
     return (
         <section className='my-container my-20 '>
-            <form onSubmit={handleSubmit(onSubmit)} className='mx-5 rounded-xl shadow-xl  md:w-1/3 md:mx-auto px-5 py-10 border-2 border-primary'>
-                <h4 className='text-primary text-2xl font-bold mb-5 text-center'>Login Form</h4>
+            <form onSubmit={handleSubmit(onSubmit)} className='mx-5 rounded-xl shadow-xl  md:w-1/3 md:mx-auto px-5 py-10 border-2 border-[#FFB347]'>
+                <h4 className='text-[#FFB347] text-2xl font-bold mb-5 text-center'>Login Form</h4>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Your Email</span>
@@ -68,7 +68,7 @@ const Login = () => {
                 </div>
                 <button className='my-btn w-full mt-5'>Login</button>
                 <p className='text-error text-center mt-2'>{error}</p>
-                <p className='text-center mt-2'>Don't have an account? <Link to='/register' className='text-primary underline'>Create an account</Link></p>
+                <p className='text-center mt-2'>Don't have an account? <Link to='/register' className='text-[#FFB347] underline'>Create an account</Link></p>
                 <SocialLogin />
             </form>
         </section>

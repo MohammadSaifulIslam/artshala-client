@@ -15,7 +15,6 @@ import PaymentHistory from "../pages/Dashboard/Student/PaymentHistory/PaymentHis
 import Home from "../pages/Home/Home/Home";
 import InstructorHome from "../pages/InstructorPage/InstructorHome/InstructorHome";
 import ErrorPage from "../pages/Others/ErrorPage/ErrorPage";
-import LoadingSpinner from "../pages/Others/LoadingSpinner/LoadingSpinner";
 import Login from "../pages/Others/Login/Login";
 import Register from "../pages/Others/Register/Register";
 
@@ -23,7 +22,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
-    errorElement: <ErrorPage/>,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: '/',
@@ -41,8 +40,8 @@ const router = createBrowserRouter([
   },
   {
     path: '/dashboard',
-    element: <PrivateRoutes><DashboardLayout /></PrivateRoutes>,
-    errorElement: <ErrorPage/>,
+    element: <DashboardLayout />,
+    errorElement: <ErrorPage />,
     children: [
       // admin dashboard
       {
@@ -55,7 +54,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/dashboard/feedback/:id',
-        element: <AdminFeedback/>
+        element: <AdminFeedback />
       },
       // instructor dashboard
       {
@@ -69,33 +68,30 @@ const router = createBrowserRouter([
       // student dashboard
       {
         path: '/dashboard/my-selected-classes',
-        element: <MySelectedClasses/>
+        element: <MySelectedClasses />
       },
       {
         path: '/dashboard/payment/:id',
-        element: <PrivateRoutes><Payment/></PrivateRoutes>
+        element: <PrivateRoutes><Payment /></PrivateRoutes>
       },
       {
         path: '/dashboard/enrolled-classes',
-        element: <PrivateRoutes><EnrolledClass/></PrivateRoutes>
+        element: <PrivateRoutes><EnrolledClass /></PrivateRoutes>
       },
       {
         path: '/dashboard/payment-history',
-        element: <PrivateRoutes><PaymentHistory/></PrivateRoutes>
+        element: <PrivateRoutes><PaymentHistory /></PrivateRoutes>
       },
     ]
   },
   {
     path: '/login',
-    element: <Login />,
-    errorElement: <ErrorPage/>,
+    element: <Login />
   },
   {
     path: '/register',
-    element: <Register />,
-    errorElement: <ErrorPage/>,
-  },
-  {path: '/loading', element: <LoadingSpinner/>},
+    element: <Register />
+  }
 ]);
 
 export default router;

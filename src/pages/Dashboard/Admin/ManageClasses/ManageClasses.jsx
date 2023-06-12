@@ -59,16 +59,16 @@ const ManageClasses = () => {
                     {/* head */}
                     <thead>
                         <tr>
-                            <th className="bg-primary">
+                            <th className="bg-[#FFB347]">
                                 #
                             </th>
-                            <th className="bg-primary">Class Photo</th>
-                            <th className="bg-primary">Class Name</th>
-                            <th className="bg-primary">Intructor Info</th>
-                            <th className="bg-primary">Seats</th>
-                            <th className="bg-primary">Price</th>
-                            <th className="bg-primary">Status</th>
-                            <th className="bg-primary">Actions</th>
+                            <th className="bg-[#FFB347]">Class Photo</th>
+                            <th className="bg-[#FFB347]">Class Name</th>
+                            <th className="bg-[#FFB347]">Intructor Info</th>
+                            <th className="bg-[#FFB347]">Seats</th>
+                            <th className="bg-[#FFB347]">Price</th>
+                            <th className="bg-[#FFB347]">Status</th>
+                            <th className="bg-[#FFB347]">Actions</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -3,8 +3,8 @@ import useInstructor from "../../../hooks/useInstructor";
 
 const ClassShowCard = ({ data ,handleSelectClass}) => {
     const {photo, class_name, instructor_name,available_seats, price, summary} = data
-    const [isAdmin] = useAdmin()
-    const [isInstructor] = useInstructor()
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
     return (
         <div className={`grid md:grid-cols-2 gap-3 p-2 rounded-md ${available_seats === 0 ? 'bg-red-300' :''}`}>
             <figure>

@@ -34,15 +34,15 @@ const MyClasses = () => {
                     {/* head */}
                     <thead>
                         <tr className="text-white">
-                            <th className="bg-primary">
+                            <th className="bg-[#FFB347]">
                                 #
                             </th>
-                            <th className="bg-primary">Photo</th>
-                            <th className="bg-primary">Class Name</th>
-                            <th className="bg-primary">Enrolled Students</th>
-                            <th className="bg-primary" >Status</th>
-                            <th className="bg-primary">Feedback</th>
-                            <th className="bg-primary">Actions</th>
+                            <th className="bg-[#FFB347]">Photo</th>
+                            <th className="bg-[#FFB347]">Class Name</th>
+                            <th className="bg-[#FFB347]">Enrolled Students</th>
+                            <th className="bg-[#FFB347]" >Status</th>
+                            <th className="bg-[#FFB347]">Feedback</th>
+                            <th className="bg-[#FFB347]">Actions</th>
                         </tr>
                     </thead>
                     <tbody>

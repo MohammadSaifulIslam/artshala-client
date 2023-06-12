@@ -19,13 +19,13 @@ const PaymentHistory = () => {
                     {/* head */}
                     <thead>
                         <tr className="text-white">
-                            <th className="bg-primary">
+                            <th className="bg-[#FFB347]">
                                 #
                             </th>
-                            <th className="bg-primary">Class Name</th>
-                            <th className="bg-primary">Price</th>
-                            <th className="bg-primary" >Payment Date</th>
-                            <th className="bg-primary">Transection Id</th>
+                            <th className="bg-[#FFB347]">Class Name</th>
+                            <th className="bg-[#FFB347]">Price</th>
+                            <th className="bg-[#FFB347]" >Payment Date</th>
+                            <th className="bg-[#FFB347]">Transection Id</th>
                         </tr>
                     </thead>
                     <tbody>

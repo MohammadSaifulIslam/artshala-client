@@ -30,7 +30,7 @@ const Sidebar = () => {
     return (
         <>
             {/* Small Screen Navbar */}
-            <div className='bg-primary bg-opacity-90 text-white flex justify-between md:hidden'>
+            <div className='bg-[#FFB347] bg-opacity-90 text-white flex justify-between md:hidden'>
                 <div>
                     <div className='block cursor-pointer p-4'>
                         <Link to='/' className="font-bold text-xl md:text-3xl" style={{ fontFamily: ['Bruno Ace SC', 'cursive'] }}>Artshala</Link>
@@ -39,14 +39,14 @@ const Sidebar = () => {
 
                 <button
                     onClick={handleToggle}
-                    className='mobile-menu-button p-4 focus:outline-none focus:bg-primary'
+                    className='mobile-menu-button p-4 focus:outline-none focus:bg-[#FFB347]'
                 >
                     <AiOutlineBars className='h-5 w-5' />
                 </button>
             </div>
             {/* Sidebar */}
             <div
-                className={`z-50 md:fixed flex flex-col justify-between overflow-x-hidden bg-primary text-white w-64 space-y-6 px-2 py-4 absolute inset-y-0 left-0 transform ${isActive && '-translate-x-full'
+                className={`z-50 md:fixed flex flex-col justify-between overflow-x-hidden bg-[#FFB347] text-white w-64 space-y-6 px-2 py-4 absolute inset-y-0 left-0 transform ${isActive && '-translate-x-full'
                     }  md:translate-x-0  transition duration-200 ease-in-out`}
             >
                 <div>
