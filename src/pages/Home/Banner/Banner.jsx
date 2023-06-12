@@ -1,5 +1,6 @@
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Link } from 'react-router-dom';
 const Banner = () => {
     return (
         <div className=''>
@@ -10,7 +11,7 @@ const Banner = () => {
                         <div className='text-white space-y-3 text- my-container text-left'>
                             <h2 className='text-5xl font-bold uppercase'>Welcome to Artshala</h2>
                             <p className='md:w-1/2'> Unleash Your Creativity this Summer! Join us for an exciting range of art courses where you can explore painting, drawing, sculpture, and digital art. Learn from expert instructors, connect with fellow artists, and make this summer a masterpiece at Artshala!</p>
-                            <button className='my-btn mt-5'>Enroll Now</button>
+                            <Link to='/classes'><button className='my-btn mt-5'>Enroll Now</button></Link>
                         </div>
                     </div>
                 </div>
@@ -20,7 +21,7 @@ const Banner = () => {
                         <div className='text-white space-y-3 text- my-container text-left'>
                             <h2 className='text-5xl font-bold uppercase'>Welcome to Artshala</h2>
                             <p className='md:w-1/2'> Unleash Your Creativity this Summer! Join us for an exciting range of art courses where you can explore painting, drawing, sculpture, and digital art. Learn from expert instructors, connect with fellow artists, and make this summer a masterpiece at Artshala!</p>
-                            <button className='my-btn mt-5'>Enroll Now</button>
+                            <Link to='/classes'><button className='my-btn mt-5'>Enroll Now</button></Link>
                         </div>
                     </div>
                 </div>
@@ -30,7 +31,7 @@ const Banner = () => {
                         <div className='text-white space-y-3 text- my-container text-left'>
                             <h2 className='text-5xl font-bold uppercase'>Welcome to Artshala</h2>
                             <p className='md:w-1/2'> Unleash Your Creativity this Summer! Join us for an exciting range of art courses where you can explore painting, drawing, sculpture, and digital art. Learn from expert instructors, connect with fellow artists, and make this summer a masterpiece at Artshala!</p>
-                            <button className='my-btn mt-5'>Enroll Now</button>
+                            <Link to='/classes'><button className='my-btn mt-5'>Enroll Now</button></Link>
                         </div>
                     </div>
                 </div>

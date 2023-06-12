@@ -14,6 +14,7 @@ import Payment from "../pages/Dashboard/Student/Payment/Payment";
 import PaymentHistory from "../pages/Dashboard/Student/PaymentHistory/PaymentHistory";
 import Home from "../pages/Home/Home/Home";
 import InstructorHome from "../pages/InstructorPage/InstructorHome/InstructorHome";
+import ErrorPage from "../pages/Others/ErrorPage/ErrorPage";
 import Login from "../pages/Others/Login/Login";
 import Register from "../pages/Others/Register/Register";
 
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage/>,
     children: [
       {
         path: '/',
@@ -39,6 +41,7 @@ const router = createBrowserRouter([
   {
     path: '/dashboard',
     element: <PrivateRoutes><DashboardLayout /></PrivateRoutes>,
+    errorElement: <ErrorPage/>,
     children: [
       // admin dashboard
       {
@@ -83,11 +86,13 @@ const router = createBrowserRouter([
   },
   {
     path: '/login',
-    element: <Login />
+    element: <Login />,
+    errorElement: <ErrorPage/>,
   },
   {
     path: '/register',
-    element: <Register />
+    element: <Register />,
+    errorElement: <ErrorPage/>,
   }
 ]);
 
