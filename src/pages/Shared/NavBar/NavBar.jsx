@@ -1,12 +1,23 @@
+import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import UserAvater from '../../../components/UserAvater/UserAvater';
 import useAuth from '../../../hooks/useAuth';
 
 const NavBar = () => {
     const { user } = useAuth();
+    const [colorChange, setColorchange] = useState(false);
+    const changeNavbarColor = () => {
+        if (window.scrollY >= 100) {
+            setColorchange(true);
+        }
+        else {
+            setColorchange(false);
+        }
+    };
+    window.addEventListener('scroll', changeNavbarColor);
     return (
-        <div className='bg-black w-full fixed left-1/2 -translate-x-1/2 top-0 z-50'>
-            <nav className="my-container navbar text-white py-5">
+        <div className={` w-full fixed border-b-2 border-primary left-1/2 -translate-x-1/2 duration-300 top-0 z-50 ${colorChange ? 'bg-white shadow-md' : 'bg-transparent'}`}>
+            <nav className={`my-container duration-300 navbar py-5 ${colorChange? 'text-black' : 'text-white'}`}>
                 <div className="navbar-start">
                     <Link to='/' className="font-bold text-xl md:text-3xl" style={{ fontFamily: ['Bruno Ace SC', 'cursive'] }}>Artshala</Link>
                 </div>
