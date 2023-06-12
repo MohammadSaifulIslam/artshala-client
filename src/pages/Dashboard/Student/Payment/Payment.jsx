@@ -21,7 +21,6 @@ const Payment = () => {
             .catch(err => console.log(err))
 
     }, [id])
-    console.log(classInfo, id)
 
     return (
         <div className="my-10">

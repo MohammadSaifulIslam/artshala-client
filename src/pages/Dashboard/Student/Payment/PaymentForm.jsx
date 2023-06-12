@@ -1,4 +1,5 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
+import axios from "axios";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import useAuth from "../../../../hooks/useAuth";
@@ -15,8 +16,8 @@ const PaymentForm = ({ classInfo }) => {
     const [transectionId, setTransectionId] = useState('');
 
     console.log(processing)
-    const { price } = classInfo;
-
+    const { price, _id, class_name, photo, instructor_name, available_seats, class_id } = classInfo;
+    console.log(available_seats)
     useEffect(() => {
         if (price > 0) {
             axiosSecure.post('/create-payment-intent', { price })
@@ -75,22 +76,44 @@ const PaymentForm = ({ classInfo }) => {
             // TODO: next step
             const paymentData = {
                 price,
-                transectionId,
+                transectionId: transectionId,
                 name: user?.displayName,
                 email: user?.email,
                 date: new Date(),
-
-
+                class_id: _id,
+                class_name,
+                photo,
+                instructor_name
             }
 
             axiosSecure.post('/payments', paymentData)
                 .then(res => {
-                    if (res.data.paymentResult.insertedId) {
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Payment Success',
-                            text: 'You successfully paid the food bill'
-                        })
+                    if (res.data.insertedId) {
+
+
+                        // remove class from selected classes
+                        axios.delete(`${import.meta.env.VITE_LOCALHOST}/select-class/${_id}`)
+                            .then(res => {
+                                if (res.data.deletedCount) {
+
+                                    // reduce available seat
+                                    const reduceSeats = available_seats - 1;
+                                    axios.patch(`${import.meta.env.VITE_LOCALHOST}/class/${class_id}`, { reduceSeats })
+                                        .then(res => {
+                                            if (res.data.modifiedCount) {
+                                                Swal.fire({
+                                                    icon: 'success',
+                                                    title: 'You successfully payment',
+                                                    showConfirmButton: false,
+                                                    timer: 1500
+                                                })
+                                            }
+                                        })
+                                        .catch(err => console.log(err))
+                                }
+                            })
+                            .catch(err => console.log(err))
+
                     }
                 })
         }
@@ -116,7 +139,7 @@ const PaymentForm = ({ classInfo }) => {
                         },
                     }}
                 />
-                <button type="submit" className="my-btn mt-8" >
+                <button type="submit" className="my-btn mt-8" disabled={!stripe || !clientSecret || processing}>
                     Pay
                 </button>
             </form>

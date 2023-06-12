@@ -14,9 +14,9 @@ const ClassHome = () => {
             .then(data => setClassData(data))
     }, [])
     const handleSelectClass = (data) =>{
-        const {_id,  photo, class_name, instructor_email, price,}=data;
+        const {_id,  photo, class_name, instructor_email, price, available_seats}=data;
 
-        const selectedClassInfo = {class_id: _id, photo,class_name, instructor_email, price, student_email: user?.email}
+        const selectedClassInfo = {class_id: _id, photo,class_name,available_seats, instructor_email, price, student_email: user?.email}
         console.log(selectedClassInfo)
         axios.post(`${import.meta.env.VITE_LOCALHOST}/select-class`, selectedClassInfo)
         .then(res=>{
