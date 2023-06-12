@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 import { Link } from 'react-router-dom';
+import ScrollRevealText from "../../../components/ScrollRevealText/ScrollRevealText";
 import './Banner.css';
 
 
@@ -39,9 +40,11 @@ const Banner = () => {
                         <div className='absolute h-full w-full top-0 right-0 bg-black bg-opacity-50 text-white flex justify-center items-center text-center'>
                             <div className='md:w-2/3 px-5'>
                                 <div className='text-white space-y-3 text- my-container text-left'>
-                                    <h2 className='text-5xl font-bold uppercase'>Welcome to Artshala</h2>
-                                    <p> Unleash Your Creativity this Summer! Join us for an exciting range of art courses where you can explore painting, drawing, sculpture, and digital art. Learn from expert instructors, connect with fellow artists, and make this summer a masterpiece at Artshala!</p>
-                                    <Link to='/classes'><button className='my-btn mt-5'>Enroll Now</button></Link>
+                                    <ScrollRevealText>
+                                        <h2 className='text-5xl font-bold uppercase'>Welcome to Artshala</h2>
+                                        <p> Unleash Your Creativity this Summer! Join us for an exciting range of art courses where you can explore painting, drawing, sculpture, and digital art. Learn from expert instructors, connect with fellow artists, and make this summer a masterpiece at Artshala!</p>
+                                        <Link to='/classes'><button className='my-btn mt-5'>Enroll Now</button></Link>
+                                    </ScrollRevealText>
                                 </div>
                             </div>
                         </div>
@@ -53,9 +56,11 @@ const Banner = () => {
                         <div className='absolute h-full w-full top-0 right-0 bg-black bg-opacity-50 text-white flex justify-center items-center text-center'>
                             <div className='md:w-2/3 px-5'>
                                 <div className='text-white space-y-3 text- my-container text-left'>
-                                    <h2 className='text-5xl font-bold uppercase'>Welcome to Artshala</h2>
-                                    <p> Unleash Your Creativity this Summer! Join us for an exciting range of art courses where you can explore painting, drawing, sculpture, and digital art. Learn from expert instructors, connect with fellow artists, and make this summer a masterpiece at Artshala!</p>
-                                    <Link to='/classes'><button className='my-btn mt-5'>Enroll Now</button></Link>
+                                <ScrollRevealText>
+                                        <h2 className='text-5xl font-bold uppercase'>Welcome to Artshala</h2>
+                                        <p> Unleash Your Creativity this Summer! Join us for an exciting range of art courses where you can explore painting, drawing, sculpture, and digital art. Learn from expert instructors, connect with fellow artists, and make this summer a masterpiece at Artshala!</p>
+                                        <Link to='/classes'><button className='my-btn mt-5'>Enroll Now</button></Link>
+                                    </ScrollRevealText>
                                 </div>
 
                             </div>
@@ -68,9 +73,11 @@ const Banner = () => {
                         <div className='absolute h-full w-full top-0 right-0 bg-black bg-opacity-50 text-white flex justify-center items-center text-center'>
                             <div className='md:w-2/3 px-5'>
                                 <div className='text-white space-y-3 text- my-container text-left'>
-                                    <h2 className='text-5xl font-bold uppercase'>Welcome to Artshala</h2>
-                                    <p> Unleash Your Creativity this Summer! Join us for an exciting range of art courses where you can explore painting, drawing, sculpture, and digital art. Learn from expert instructors, connect with fellow artists, and make this summer a masterpiece at Artshala!</p>
-                                    <Link to='/classes'><button className='my-btn mt-5'>Enroll Now</button></Link>
+                                <ScrollRevealText>
+                                        <h2 className='text-5xl font-bold uppercase'>Welcome to Artshala</h2>
+                                        <p> Unleash Your Creativity this Summer! Join us for an exciting range of art courses where you can explore painting, drawing, sculpture, and digital art. Learn from expert instructors, connect with fellow artists, and make this summer a masterpiece at Artshala!</p>
+                                        <Link to='/classes'><button className='my-btn mt-5'>Enroll Now</button></Link>
+                                    </ScrollRevealText>
                                 </div>
 
                             </div>

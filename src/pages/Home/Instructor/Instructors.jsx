@@ -7,7 +7,7 @@ const Instructors = () => {
     useEffect(() => {
         fetch(`${import.meta.env.VITE_LOCALHOST}/instructors`)
             .then(res => res.json())
-            .then(data => setInstructorsData(data.slice(0, 6)))
+            .then(data => setInstructorsData(data.slice(0, 8)))
     }, [])
     return (
         <section className="my-container mt-20">

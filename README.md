@@ -29,4 +29,4 @@
 - Stripe payment method impleament
 - Instructor can add new classes and see totall enrolled students
 - Admin can manage users (make instructor and admin also)
-- Website have a dark and light mood
+- Dark and light mood impleament
