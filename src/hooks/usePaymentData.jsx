@@ -4,17 +4,16 @@ import useAuth from './useAuth';
 
 const usePaymentData = () => {
     const { user } = useAuth();
-    const [enrolledClasses, setEnrolledclasses] = useState([])
+    const [paymentData, setPaymentData] = useState([])
 
     useEffect(() => {
         axios.get(`${import.meta.env.VITE_LOCALHOST}/payments/${user?.email}`)
             .then(res => {
-                console.log(res.data)
-                setEnrolledclasses(res.data)
+                setPaymentData(res.data)
             })
             .catch(err => console.log(err))
     }, [user])
-    return {enrolledClasses}
+    return { paymentData}
 };
 
 export default usePaymentData;

@@ -1,22 +1,9 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import useAuth from "../../../../hooks/useAuth";
+import usePaymentData from "../../../../hooks/usePaymentData";
 import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
 import EnrolledClassRow from "./EnrolledClassRow/EnrolledClassRow";
 
 const EnrolledClass = () => {
-    const { user } = useAuth();
-    const [enrolledClasses, setEnrolledclasses] = useState([])
-
-    useEffect(() => {
-        axios.get(`${import.meta.env.VITE_LOCALHOST}/payments/${user?.email}`)
-            .then(res => {
-                console.log(res.data)
-                setEnrolledclasses(res.data)
-            })
-            .catch(err => console.log(err))
-    }, [user])
-    
+    const { paymentData } = usePaymentData()
     return (
         <div className="my-10">
             <SectionTitle title={'My Enrolled Classes'} />
@@ -37,7 +24,7 @@ const EnrolledClass = () => {
                     <tbody>
                         {/* row 1 */}
                         {
-                            enrolledClasses.map((classData, index) =>
+                            paymentData.map((classData, index) =>
                                 <EnrolledClassRow key={classData._id} classData={classData} index={index}></EnrolledClassRow>
                             )
                         }
