@@ -3,6 +3,7 @@ import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 import DashboardLayout from "../layouts/DashboardLayout";
 import Main from "../layouts/Main";
 import ClassHome from "../pages/ClassesPage/ClassHome/ClassHome";
+import ContactPage from "../pages/ContactPage/ContactPage";
 import AddClass from "../pages/Dashboard/AddClass/AddClass";
 import AdminFeedback from "../pages/Dashboard/Admin/ManageClasses/AdminFeedback/AdminFeedback";
 import ManageClasses from "../pages/Dashboard/Admin/ManageClasses/ManageClasses";
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: '/classes',
         element: <ClassHome />
+      },
+      {
+        path: '/contact',
+        element: <ContactPage/>
       },
     ]
   },
