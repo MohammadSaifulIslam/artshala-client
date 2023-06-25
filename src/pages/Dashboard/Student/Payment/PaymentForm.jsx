@@ -149,6 +149,12 @@ const PaymentForm = ({ classInfo }) => {
             {
                 transectionId && <p className="text-success">Your transection id: {transectionId}</p>
             }
+            <p className="mt-10">Don't have a card? Here is a demo card.
+                <span className="text-[#FFB347] block">Card number 4242 4242 4242 4242</span>
+                <span className="text-[#FFB347] block">MM/YY :  12/25</span>
+                <span className="text-[#FFB347] block">Cvc : 242</span>
+                <span className="text-[#FFB347] block">Zip : 42424</span>
+                You can use it </p>
         </div>
     );
 };

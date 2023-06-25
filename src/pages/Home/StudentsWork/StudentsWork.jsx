@@ -24,7 +24,7 @@ const StudentsWork = () => {
                         </p>
                     </ScrollRevealText>
                 </div>
-                <div className='col-span-2 grid grid-cols-4 gap-4' id='lightgallery'>
+                <div className='md:col-span-2 grid grid-cols-4 gap-4' id='lightgallery'>
 
                     <figure className='col-span-2 row-span-2 overflow-hidden cursor-pointer'>
                         <img className='hover:scale-125 duration-300 w-full h-full object-cover overflow-hidden'  alt="img1" src="https://img.freepik.com/free-vector/hand-painted-watercolour-landscape-background-1603_1048-18535.jpg?size=626&ext=jpg&uid=R59828080&ga=GA1.2.562300066.1684249269&semt=sph" />
