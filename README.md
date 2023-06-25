@@ -2,7 +2,7 @@
 
 ### Live preview -> <a href="https://artshala-school.web.app/">Artshala</a>
 
-### Artshala server side -> <a href="https://github.com/programming-hero-web-course1/b7a12-summer-camp-server_side-MohammadSaifulIslam">Click to go</a>
+### Artshala server side -> <a href="https://github.com/MohammadSaifulIslam/artshala-server">Click to go</a>
 
 ### Language and Tools:
 
